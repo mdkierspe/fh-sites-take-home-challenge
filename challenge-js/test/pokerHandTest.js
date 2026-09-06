@@ -45,3 +45,38 @@ describe('Rank A Flush', function() {
 });
 
 // More tests go here
+describe('Rank a Straight Flush', function() {
+  it('Return straight flush when hand given', function() {
+    var hand = new PokerHand('4s 5s 6s 7s 8s');
+    assert.equal(hand.getRank(), 'Straight Flush');
+  });
+});
+
+describe('Rank a Four of a Kind', function() {
+  it('Return Four of a Kind when hand given', function() {
+    var hand = new PokerHand('4s 4s 4s 4s As');
+    assert.equal(hand.getRank(), 'Four of a Kind');
+  });
+});
+
+describe('Rank a Full House', function() {
+  it('Return Full House when hand given', function() {
+    var hand = new PokerHand('Js Jc Jh 5c 5s');
+    assert.equal(hand.getRank(), 'Full House');
+  });
+});
+
+
+describe('Rank a Straight', function() {
+  it('Return Straight when hand given', function() {
+    var hand = new PokerHand('3c 4h 5d 6s 7h');
+    assert.equal(hand.getRank(), 'Straight');
+  });
+});
+
+describe('Rank a Three of a Kind', function() {
+  it('Return Three of a Kind when hand given', function() {
+    var hand = new PokerHand('3c 3c 3c 6s 7h');
+    assert.equal(hand.getRank(), 'Three of a Kind');
+  });
+});
